@@ -51,7 +51,7 @@ public class TestCache {
     }
 
     public static final void fillDirectMemory() {
-        DB db = DBMaker.newDirectMemoryDB().transactionDisable().closeOnJvmShutdown().make();
+        DB db = DBMaker.newMemoryDirectDB().transactionDisable().closeOnJvmShutdown().make();
         Map m = db.getTreeMap("test");
         fillCache(m);
     }
